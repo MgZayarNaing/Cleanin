@@ -1,7 +1,95 @@
 {% extends 'base.html' %}
 
-{% block body %} 
+{% block body %}
 
-<h1>Hello World!</h1>
+<!--Start Main Slider Four-->
+<section class="main-slider-four">
+    <div class="main-slider-four__carousel owl-carousel owl-theme">
+
+
+        
+        <!--Start Main Slider Four Single-->
+        {% for i in mainslider %}
+        <div class="main-slider-four__single">
+            <div class="main-slider-four__bg" style="background-image: url(assets/images/slider/slider-v4-img1.jpg);">
+            </div>
+            <div class="shape1 float-bob-x"><img src="{{ i.background_image.url }}" alt="">
+            </div>
+            <div class="container">
+                <div class="main-slider-four__content">
+                    <div class="tagline">
+                        <span>{{ i.tagline|safe }}</span>
+                    </div>
+                    <div class="title-box">
+                        <h2>{{ i.title|safe }}</h2>
+                    </div>
+                    <div class="text-box">
+                        <p>{{ i.description|safe }}</p>
+                    </div>
+
+                    <div class="main-slider-four__btn">
+                        <a class="thm-btn" href="{{ i.thm_btn }}">{{ i.thm_text|safe }}
+                            <i class="icon-next"></i>
+                            <span class="hover-btn hover-bx"></span>
+                            <span class="hover-btn hover-bx2"></span>
+                            <span class="hover-btn hover-bx3"></span>
+                            <span class="hover-btn hover-bx4"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!--End Main Slider Four Single-->
+
+
+    </div>
+
+    <div class="main-slider__form">
+        <div class="main-slider__form-bg" style="background-image: url(assets/images/pattern/main-slider-form-bg.png);">
+        </div>
+
+        <div class="title-box">
+            <h2>Request A Free Estimate</h2>
+        </div>
+        <form method="post" action="https://unicktheme.com/2025/cleanin/main-html/index.html">
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Your Name" required="">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email Address" value="" name="form_email" required="">
+            </div>
+            <div class="form-group">
+                <div class="select-box">
+                    <select class="selectmenu wide">
+                        <option selected="selected">Choose Services</option>
+                        <option>House Cleaning</option>
+                        <option>Office Cleaning</option>
+                        <option>Kitchen Cleaning</option>
+                        <option>Window Cleaning</option>
+                        <option>Car Cleaning</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Message"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="button-box">
+                        <button class="thm-btn" type="submit" data-loading-text="Please wait...">
+                            Submit Reaquest Now
+                            <span class="hover-btn hover-bx"></span>
+                            <span class="hover-btn hover-bx2"></span>
+                            <span class="hover-btn hover-bx3"></span>
+                            <span class="hover-btn hover-bx4"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<!--End Main Slider Four-->
 
 {% endblock %}

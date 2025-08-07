@@ -1,6 +1,10 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 
 def HomePage(request):
-    return render(request, 'index.html')
+    mainslider = MainSliderModel.objects.all()
+    context = {
+        'mainslider':mainslider
+    }
+    return render(request, 'index.html',context)
